@@ -111,9 +111,13 @@ router.get("/vnpay_return", function (req, res, next) {
   if (secureHash === signed) {
     //Kiem tra xem du lieu trong db co hop le hay khong va thong bao ket qua
 
-    res.status(200).json({ code: vnp_Params["vnp_ResponseCode"] });
+    const deepLink = "reactnativejest://com.reactnativejest";
+
+    res.redirect(deepLink);
+
+    return res.status(200).json({ code: vnp_Params["vnp_ResponseCode"] });
   } else {
-    res.status(200).json({ code: "97" });
+    return res.status(200).json({ code: "97" });
   }
 });
 

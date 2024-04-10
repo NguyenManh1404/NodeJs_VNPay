@@ -5,8 +5,12 @@ extends layout
 
 block content
     if code == "00"
-        p(style="text-align: center")  GD thành công
+        .result-container
+            img(src="https://cdn-icons-png.flaticon.com/512/148/148767.png", alt="Success", style="width: 100%; max-width: 200px; height: auto; display: block; margin: 0 auto;")
+            p(style="text-align: center; color: green; font-size: 20px; margin-top: 20px;") GD thành công
     else
-        p(style="text-align: center; color: red") GD thất bại
-    p(style="text-align: center")
-        a.btn.btn-default(href='/order') Về danh sách
+        .result-container
+            img(src="https://static.vecteezy.com/system/resources/thumbnails/017/178/563/small/cross-check-icon-symbol-on-transparent-background-free-png.png", alt="Error", style="width: 100%; max-width: 200px; height: auto; display: block; margin: 0 auto;")
+            p(style="text-align: center; color: red; font-size: 20px; margin-top: 20px;") GD thất bại
+    p(style="text-align: center; margin-top: 20px;")
+        a.btn.btn-default(href='javascript:void(0)', onclick='window.close()') Quay về ứng dụng
